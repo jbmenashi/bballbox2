@@ -11,4 +11,4 @@ Player Boxscores:
   <% end %>
 </ul>
 
-<%= button_to "Delete Game?", @game, method: :delete %>
+<%= button_to "Delete Game?", @game, method: :delete, data: {confirm: 'Are you sure?'} %>

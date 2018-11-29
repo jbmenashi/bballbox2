@@ -17,4 +17,4 @@ Game: <%= link_to @boxscore.game_info(@boxscore.game), game_path(@boxscore.game)
 </table>
 
 
-<%= button_to "Delete Game?", @game, method: :delete %>
+<%= button_to "Delete Game?", @game, method: :delete, data: {confirm: 'Are you sure?'} %>
