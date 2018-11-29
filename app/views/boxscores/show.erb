@@ -17,6 +17,4 @@ Game: <%= link_to @boxscore.game_info(@boxscore.game), game_path(@boxscore.game)
 </table>
 
 
-<%= form_for @boxscore do |f| %>
-  <%= button_to "Delete Boxscore?", @boxscore, :method => :delete %>
-<% end %>
+<%= button_to "Delete Game?", @game, method: :delete %>

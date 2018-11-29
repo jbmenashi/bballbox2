@@ -50,7 +50,7 @@ class BoxscoresController < ApplicationController
   end
 
   def boxscore_params
-    params.require(:boxscore).permit(:points, :rebounds, :assists, :player_id, :game_id)
+    params.require(:boxscore).permit( :player_id, :game_id, :points, :rebounds, :assists)
   end
 
 end

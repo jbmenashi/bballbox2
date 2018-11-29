@@ -11,6 +11,4 @@ Player Boxscores:
   <% end %>
 </ul>
 
-<%= form_for @game do |f| %>
-  <%= button_to "Delete Game?", @game, :method => :delete %>
-<% end %>
+<%= button_to "Delete Game?", @game, method: :delete %>
