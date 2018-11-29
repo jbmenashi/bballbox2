@@ -1,0 +1,22 @@
+<h1> Edit a Player </h1>
+
+<ol>
+  <% if flash[:errors] %>
+    <strong>Errors</strong>
+    <% flash[:errors].each do |error| %>
+    <li> <%= error %> </li>
+    <% end %>
+  <% end %>
+</ol>
+
+<%= form_for @player do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <%= f.label :team %>
+  <%= f.text_field :team %>
+  <%= f.label :jersey %>
+  <%= f.number_field :jersey %>
+  <%= f.submit %>
+<% end %>

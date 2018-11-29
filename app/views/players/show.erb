@@ -1,0 +1,29 @@
+<h1><%= @player.name %> Player Page</h1>
+
+<div>
+  Age: <%= @player.age %><br>
+  Team: <%= @player.team %><br>
+  Jersey #: <%= @player.jersey %><br>
+</div>
+
+<br>
+
+<div>
+  Points Per Game: <%= @player.points_per_game %><br>
+  Rebounds Per Game: <%= @player.rebounds_per_game %><br>
+  Assists Per Game: <%= @player.assists_per_game %><br>
+</div>
+
+<br>
+
+<div>
+  <% @player.boxscores.each do |boxscore| %>
+    Boxscore: <%= link_to boxscore.game_info(boxscore.game), boxscore  %><br>
+  <% end %>
+</div>
+
+<br>
+
+<%= form_for @player do |f| %>
+  <%= button_to "Delete Player?", @player, :method => :delete %>
+<% end %>

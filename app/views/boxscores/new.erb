@@ -1,0 +1,22 @@
+<h1>New Boxscore Form</h1>
+
+<ol>
+  <% if flash[:errors] %>
+    <strong>Errors</strong>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  <% end %>
+</ol>
+
+<%= form_for @boxscore do |f| %>
+  <%= f.collection_select :player_id, @players, :id, :name, prompt: 'Select Player' %>
+  <%= f.collection_select :game_id, @games, :id, :game_info, prompt: 'Select Game' %>
+  <%= f.label :points %>
+  <%= f.number_field :points %>
+  <%= f.label :rebounds %>
+  <%= f.number_field :rebounds %>
+  <%= f.label :assists %>
+  <%= f.number_field :assists %>
+  <%= f.submit %>
+<% end %>

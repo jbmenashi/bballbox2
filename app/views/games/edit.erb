@@ -1,0 +1,20 @@
+<h1> Edit A Game </h1>
+
+<ol>
+  <% if flash[:errors] %>
+    <strong>Errors</strong>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  <% end %>
+</ol>
+
+<%= form_for @game do |f| %>
+  <%= f.label :date %>
+  <%= f.datetime_select :date, :ampm => true, :minute_step => 30 %>
+  <%= f.label :opponent %>
+  <%= f.text_field :opponent %>
+  <%= f.label :home %>
+  <%= f.check_box :home %>
+  <%= f.submit %>
+<% end %>

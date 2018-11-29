@@ -1,0 +1,22 @@
+<h1> View Boxscore </h1>
+
+Player Name: <%= link_to @boxscore.player.name, player_path(@boxscore.player) %><br>
+Game: <%= link_to @boxscore.game_info(@boxscore.game), game_path(@boxscore.game) %>
+
+<table>
+  <tr>
+    <th>Points</th>
+    <th>Rebounds</th>
+    <th>Assists</th>
+  </tr>
+  <tr>
+    <td><%= @boxscore.points %></td>
+    <td><%= @boxscore.rebounds %></td>
+    <td><%= @boxscore.assists %></td>
+  </tr>
+</table>
+
+
+<%= form_for @boxscore do |f| %>
+  <%= button_to "Delete Boxscore?", @boxscore, :method => :delete %>
+<% end %>
